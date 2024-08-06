@@ -222,8 +222,14 @@ func parseInfo(response []byte) map[string]any {
 	ErrCode := code[1][0]
 	VsNum, _ := strconv.Atoi(VSNNum)
 	version := big.NewInt(int64(VsNum)).Bytes()
-	split := strconv.FormatInt(int64(version[1]), 16)
-	versionStr := fmt.Sprintf("%d.%c.%c.%d.%d", version[0], split[0], split[1], version[2], version[3])
+	versionStr := ""
+	if len(version) == 4 {
+		split := "00"
+		if version[1] != 0 {
+			split = fmt.Sprintf("%02s", strconv.FormatInt(int64(version[1]), 16))
+		}
+		versionStr = fmt.Sprintf("%d.%s.%s.%d.%d", version[0], string(split[0]), string(split[1]), version[2], version[3])
+	}
 	return map[string]any{"Oracle TNS Listener Version": versionStr, "VSNNUM": VSNNum, "ERROR_CODE": ErrCode}
 }
 
