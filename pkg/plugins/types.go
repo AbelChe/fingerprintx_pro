@@ -16,11 +16,13 @@ package plugins
 
 import (
 	"encoding/json"
+	"fmt"
 	"net"
 	"net/http"
 	"net/netip"
 	"strings"
 	"time"
+	"unicode/utf8"
 )
 
 // type SupportedIPVersion uint64
@@ -88,6 +90,54 @@ type PluginID struct {
 
 type Metadata interface {
 	Type() string
+}
+
+func (e *Service) String(bannerLengthLimit int) string {
+	var tempMap map[string]json.RawMessage
+	err := json.Unmarshal(e.Raw, &tempMap)
+	banner := func(b []byte) string {
+		var str string
+		for len(b) > 0 {
+			r, size := utf8.DecodeRune(b)
+			if r == utf8.RuneError && size == 1 {
+				str += fmt.Sprintf("\\x%02x", b[0])
+			} else {
+				str += string(r)
+			}
+			b = b[size:]
+		}
+		return str
+	}(e.Raw)
+	if err == nil {
+		if tempMap["banner"] != nil {
+			banner = string(tempMap["banner"])
+		} else if tempMap["errorMsg"] != nil {
+			banner = string(tempMap["errorMsg"])
+		} else if len(tempMap) == 0 {
+			banner = ""
+		}
+	}
+	return fmt.Sprintf("%s://%s:%d %s [%s] <%s>", e.Protocol, e.IP, e.Port, func() (tls string) {
+		if e.TLS {
+			return "(tls)"
+		} else {
+			return ""
+		}
+	}(),
+		func() string {
+			if e.Version != "" {
+				return e.Version
+			} else {
+				return ""
+			}
+		}(),
+		func() string {
+			if len(banner) > bannerLengthLimit {
+				return banner[:bannerLengthLimit-3] + "..."
+			}
+			return banner
+		}(),
+	)
 }
 
 func (e Service) Type() string { return TypeService }
@@ -404,7 +454,7 @@ type ServiceRedis struct {
 func (e ServiceRedis) Type() string { return ProtoRedis }
 
 type ServiceFTP struct {
-	Banner         string `json:"banner"`
+	Banner string `json:"banner"`
 }
 
 func (e ServiceFTP) Type() string { return ProtoFTP }
