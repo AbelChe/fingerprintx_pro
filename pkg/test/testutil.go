@@ -22,9 +22,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
 	"github.com/ory/dockertest/v3"
 	"github.com/stretchr/testify/require"
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
 )
 
 type Testcase struct {

@@ -20,8 +20,8 @@ import (
 	"net"
 	"time"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins/pluginutils"
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins/pluginutils"
 )
 
 type EchoPlugin struct{}

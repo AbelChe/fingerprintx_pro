@@ -15,7 +15,7 @@
 package main
 
 import (
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/runner"
+	"github.com/AbelChe/fingerprintx_pro/pkg/runner"
 )
 
 func main() {

@@ -28,7 +28,7 @@ import (
 
 	"golang.org/x/crypto/ed25519"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/third_party/cryptolib/ssh/internal/bcrypt_pbkdf"
+	"github.com/AbelChe/fingerprintx_pro/third_party/cryptolib/ssh/internal/bcrypt_pbkdf"
 )
 
 // Public key algorithms names. These values can appear in PublicKey.Type,

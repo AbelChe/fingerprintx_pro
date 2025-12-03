@@ -24,9 +24,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
+	utils "github.com/AbelChe/fingerprintx_pro/pkg/plugins/pluginutils"
 	wappalyzer "github.com/projectdiscovery/wappalyzergo"
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
-	utils "gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins/pluginutils"
 )
 
 type HTTPPlugin struct {

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 FROM golang:alpine AS builder
-RUN go install gitlab.4399.cn/gz007/fingerprintx_pro/cmd/fingerprintx@latest
+RUN go install github.com/AbelChe/fingerprintx_pro/cmd/fingerprintx@latest
 
 FROM alpine:latest
 RUN apk -U upgrade --no-cache \

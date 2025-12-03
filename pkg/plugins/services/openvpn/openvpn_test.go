@@ -17,7 +17,7 @@ package openvpn
 import (
 	"testing"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/test"
+	"github.com/AbelChe/fingerprintx_pro/pkg/test"
 )
 
 func TestOpenVPN(t *testing.T) {

@@ -20,7 +20,7 @@ import (
 	"net/netip"
 	"sync"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
 )
 
 func UDPScan(targets []plugins.Target, config Config) ([]plugins.Service, error) {

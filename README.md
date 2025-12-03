@@ -5,8 +5,8 @@
 
 <p align="center">
 <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
-<a href="https://gitlab.4399.cn/gz007/fingerprintx_pro/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
-<a href="https://gitlab.4399.cn/gz007/fingerprintx_pro/releases"><img src="https://img.shields.io/badge/version-v1.0.0-blue"></a>
+<a href="https://github.com/AbelChe/fingerprintx_pro/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+<a href="https://github.com/AbelChe/fingerprintx_pro/releases"><img src="https://img.shields.io/badge/version-v1.0.0-blue"></a>
 </p>
 
 <p align="center">
@@ -73,7 +73,7 @@ https://user-images.githubusercontent.com/69640071/193334167-8405dd50-f9bf-4386-
 # Installation
 From Github
 ```sh
-go install gitlab.4399.cn/gz007/fingerprintx_pro/cmd/fingerprintx@latest
+go install github.com/AbelChe/fingerprintx_pro/cmd/fingerprintx@latest
 ```
 From source (go version > 1.18)
 ```sh

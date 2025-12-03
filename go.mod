@@ -1,4 +1,4 @@
-module gitlab.4399.cn/gz007/fingerprintx_pro
+module github.com/AbelChe/fingerprintx_pro
 
 go 1.20
 

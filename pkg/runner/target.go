@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
 )
 
 var inputFile string

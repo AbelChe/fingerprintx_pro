@@ -25,8 +25,8 @@ import (
 	"strings"
 	"time"
 
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins"
-	utils "gitlab.4399.cn/gz007/fingerprintx_pro/pkg/plugins/pluginutils"
+	"github.com/AbelChe/fingerprintx_pro/pkg/plugins"
+	utils "github.com/AbelChe/fingerprintx_pro/pkg/plugins/pluginutils"
 )
 
 type ORACLEPlugin struct{}

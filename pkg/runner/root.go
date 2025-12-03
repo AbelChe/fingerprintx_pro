@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/AbelChe/fingerprintx_pro/pkg/scan"
 	"github.com/spf13/cobra"
-	"gitlab.4399.cn/gz007/fingerprintx_pro/pkg/scan"
 )
 
 var (
